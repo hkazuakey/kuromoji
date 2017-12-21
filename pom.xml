@@ -40,6 +40,7 @@
 
     <modules>
         <module>kuromoji-core</module>
+        <module>kuromoji-cli</module>
         <module>kuromoji-ipadic</module>
         <module>kuromoji-ipadic-neologd</module>
         <module>kuromoji-jumandic</module>
