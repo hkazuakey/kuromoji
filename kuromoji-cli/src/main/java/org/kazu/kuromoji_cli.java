@@ -12,8 +12,11 @@ public class kuromoji_cli {
             return;
         }
 
-        Tokenizer tokenizer = new Tokenizer() ;
-        List<Token> tokens = tokenizer.tokenize(args[0]);
+        String input = args[0];
+//        String input = args[0].replaceAll("\\s","");
+
+        Tokenizer tokenizer = new Tokenizer();
+        List<Token> tokens = tokenizer.tokenize(input);
         for (Token token : tokens) {
             System.out.println(token.getSurface() + "\t" + token.getAllFeatures());
         }
