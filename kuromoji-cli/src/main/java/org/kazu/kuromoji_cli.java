@@ -1,10 +1,7 @@
 package org.kazu;
 
-import com.atilika.kuromoji.ipadic.Token;
-import com.atilika.kuromoji.ipadic.Tokenizer;
-import java.util.List;
-
 public class kuromoji_cli {
+    
     public static void main( String[] args ) {
 
         if (args.length < 1) {
@@ -12,14 +9,25 @@ public class kuromoji_cli {
             return;
         }
 
-        String input = args[0];
+        String input = args[1];
 //        String input = args[0].replaceAll("\\s","");
 
-        Tokenizer tokenizer = new Tokenizer();
-        List<Token> tokens = tokenizer.tokenize(input);
-        for (Token token : tokens) {
-            System.out.println(token.getSurface() + "\t" + token.getAllFeatures());
+        Object cliTokenizerClient;
+        String type = args[0].toLowerCase();
+
+        if (type.contains("ipadic")) {
+            System.out.println("==== IPAdic =======================");
+            cliTokenizerClient = new cliIPAdic();
+        } else if (type.contains("unidic")) {
+            System.out.println("==== UniDic =======================");
+            cliTokenizerClient = new cliUnidic();
+        } else {
+            System.out.println("==== IPAdic =======================");
+            cliTokenizerClient = new cliIPAdic();
+            ((cliClient)cliTokenizerClient).transform(input);
+            System.out.println("==== UniDic =======================");
+            cliTokenizerClient = new cliUnidic();
         }
-        System.out.println("EOS");
+        ((cliClient)cliTokenizerClient).transform(input);
     }
 }
