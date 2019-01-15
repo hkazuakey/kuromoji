@@ -16,17 +16,31 @@ public class kuromoji_cli {
         String type = args[0].toLowerCase();
 
         if (type.contains("ipadic")) {
-            System.out.println("==== IPAdic =======================");
-            cliTokenizerClient = new cliIPAdic();
-        } else if (type.contains("unidic")) {
-            System.out.println("==== UniDic =======================");
-            cliTokenizerClient = new cliUnidic();
-        } else {
-            System.out.println("==== IPAdic =======================");
+            System.out.println("== IPAdic =========================");
+            System.out.println("==== Vanilla =======================");
             cliTokenizerClient = new cliIPAdic();
             ((cliClient)cliTokenizerClient).transform(input);
-            System.out.println("==== UniDic =======================");
+            System.out.println("==== Custom =======================");
+            cliTokenizerClient = new cliIPAdic2();
+        } else if (type.contains("unidic")) {
+            System.out.println("== UniDic =========================");
+            System.out.println("==== Vanilla =======================");
             cliTokenizerClient = new cliUnidic();
+            ((cliClient)cliTokenizerClient).transform(input);
+            System.out.println("==== Custom =======================");
+            cliTokenizerClient = new cliUnidic2();
+        } else {
+            System.out.println("== IPAdic =========================");
+            cliTokenizerClient = new cliIPAdic();
+            ((cliClient)cliTokenizerClient).transform(input);
+            System.out.println("===================================");
+            cliTokenizerClient = new cliIPAdic2();
+            ((cliClient)cliTokenizerClient).transform(input);
+            System.out.println("== UniDic =========================");
+            cliTokenizerClient = new cliUnidic();
+            ((cliClient)cliTokenizerClient).transform(input);
+            System.out.println("===================================");
+            cliTokenizerClient = new cliUnidic2();
         }
         ((cliClient)cliTokenizerClient).transform(input);
     }
