@@ -5,9 +5,9 @@ import com.atilika.kuromoji.ipadic.Tokenizer;
 
 import java.util.List;
 
-public class cliIPAdic extends cliClient {
+public class cliKuromojiIPA extends cliClient {
 
-    public cliIPAdic() {
+    public cliKuromojiIPA() {
         tokenizer = new Tokenizer();
     }
 
