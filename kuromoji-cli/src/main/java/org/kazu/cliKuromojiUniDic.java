@@ -5,9 +5,9 @@ import com.atilika.kuromoji.unidic.Tokenizer;
 
 import java.util.List;
 
-public class cliUnidic extends cliClient {
+public class cliKuromojiUniDic extends cliClient {
 
-    public cliUnidic() {
+    public cliKuromojiUniDic() {
         tokenizer = new Tokenizer();
     }
 

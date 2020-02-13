@@ -45,7 +45,7 @@
       <scope>compile</scope>
     </dependency>
     <!-- Mercari custom -->
-    <dependency>
+    <!-- <dependency>
       <groupId>com.atilika.kuromoji</groupId>
       <artifactId>kuromoji-unidic-mercari</artifactId>
       <version>1.0-SNAPSHOT</version>
@@ -56,7 +56,7 @@
       <artifactId>kuromoji-ipadic-mercari</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
-    </dependency>
+    </dependency> -->
     <!-- Testing  -->
     <dependency>
       <groupId>junit</groupId>
