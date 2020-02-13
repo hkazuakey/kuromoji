@@ -1,7 +1,7 @@
 package org.kazu;
 
 public class kuromoji_cli {
-    
+
     public static void main( String[] args ) {
 
         if (args.length < 1) {
@@ -21,7 +21,7 @@ public class kuromoji_cli {
             cliTokenizerClient = new cliIPAdic();
             ((cliClient)cliTokenizerClient).transform(input);
             System.out.println("==== Custom =======================");
-            cliTokenizerClient = new cliIPAdic2();
+            cliTokenizerClient = new cliLuceneIPA();
         } else if (type.contains("unidic")) {
             System.out.println("== UniDic =========================");
             System.out.println("==== Vanilla =======================");

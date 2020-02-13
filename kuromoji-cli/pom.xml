@@ -37,6 +37,13 @@
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
+    <!-- Lucene/Solr -->
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-analyzers-kuromoji</artifactId>
+      <version>8.4.1</version>
+      <scope>compile</scope>
+    </dependency>
     <!-- Mercari custom -->
     <dependency>
       <groupId>com.atilika.kuromoji</groupId>
